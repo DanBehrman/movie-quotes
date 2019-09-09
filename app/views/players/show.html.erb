@@ -1,0 +1,7 @@
+<h1><%= @player.user_name %></h1>
+<%= @player.high_score %>
+
+<% if  @player.id == session[:player_id] %>
+    <%= button_to "Edit Player", edit_player_path, method: :get %><br>
+    <%= button_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}", method: :delete %>
+<% end %>

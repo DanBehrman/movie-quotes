@@ -1,24 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TO DO
+- Include proper password reset path, not via player_edit page
+- Build Games model
+- Build PlayerGames model
+- Build Phrase model
+- Build GamePhrase model
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Login/Username perpetually in upper-right corner
