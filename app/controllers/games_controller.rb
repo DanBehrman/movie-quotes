@@ -7,7 +7,9 @@ class GamesController < ApplicationController
 
     def guess
         @game = Game.find(params[:id])
-        @status = params[:status]
+        @status = params[:status].to_i
+        @answers = @game.wrong_answers
+        @answers << @game.quote
     end
 
     def assess

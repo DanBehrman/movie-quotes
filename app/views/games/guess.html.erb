@@ -1,1 +1,7 @@
-<%= "Round #{@status}" %>
+<%= "Round #{@status}" %><br>
+
+<%= @game.quotes[@status - 1].text %>
+<% @answers.each do |answer| %>
+    <%= answer.author %>
+<% end %>
+

@@ -9,6 +9,17 @@ class Game < ApplicationRecord
     end
 
     def setup_game
-        5.times do setup_round end 
+       5.times do setup_round end
+    end
+
+    def wrong_answers
+        incorrect_answers = []
+        while incorrect_answers.length < 3
+            sample = Quote.all.sample
+            if sample.author != self.round.quote.author && !incorrect_answers.include?(sample.author)
+                incorrect_answers << sample
+            end
+        end
+        incorrect_answers
     end
 end
