@@ -1,5 +1,8 @@
 class PlayersController < ApplicationController
-    
+    def index
+        @players = Player.all
+    end
+
     def show
         @player = Player.find(params[:id])
     end
@@ -12,6 +15,8 @@ class PlayersController < ApplicationController
         @player = Player.create(player_params)
         if @player.valid?
             @player.save
+            #redirect_to player_path(@player)
+            session[:player_id] = @player.id
             redirect_to player_path(@player)
         else
             flash.now[:messages] = @player.errors.full_messages
@@ -36,7 +41,7 @@ class PlayersController < ApplicationController
     def destroy
         player = Player.find(params[:id])
         player.delete
-        redirect_to new_player_path
+        redirect_to '/'
     end
 
     private
