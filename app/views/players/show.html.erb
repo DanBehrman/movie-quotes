@@ -3,6 +3,7 @@
 <label>Motto: </label><%= @player.motto %><br><br>
 
 <% if  @player.id == session[:player_id] %>
+    <%= button_to "Start a New Game!", '/games' %>
     <%= button_to "Edit Player", edit_player_path, method: :get %><br>
     <%= button_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}", method: :delete %>
 <% end %>
