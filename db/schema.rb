@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_10_141820) do
+ActiveRecord::Schema.define(version: 2019_09_10_154819) do
+
+  create_table "games", force: :cascade do |t|
+  end
+
+  create_table "player_games", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "player_id"
+    t.integer "score"
+    t.index ["game_id"], name: "index_player_games_on_game_id"
+    t.index ["player_id"], name: "index_player_games_on_player_id"
+  end
 
   create_table "players", force: :cascade do |t|
     t.string "user_name"
@@ -24,6 +35,13 @@ ActiveRecord::Schema.define(version: 2019_09_10_141820) do
   create_table "quotes", force: :cascade do |t|
     t.string "text"
     t.string "author"
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer "game_id"
+    t.integer "quote_id"
+    t.index ["game_id"], name: "index_rounds_on_game_id"
+    t.index ["quote_id"], name: "index_rounds_on_quote_id"
   end
 
 end
