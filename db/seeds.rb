@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+rfq_api_key = Rails.application.credentials.x_rapid_api_key
+rfq_api_host = Rails.application.credentials.x_rapid_api_host
+
+results = JSON.parse(RestClient.get("https://andruxnet-random-famous-quotes.p.rapidapi.com/?cat=movies&count=10", headers={"X-RapidAPI-Host" => rfq_api_host, "X-RapidAPI-Key" => rfq_api_key}))
+
+results.each do |result|
+    Quote.create!(text: result["quote"], author: result["author"])
+end
