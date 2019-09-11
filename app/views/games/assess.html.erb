@@ -2,4 +2,8 @@
 
 <h1><%= @answer %></h1><br><br>
 
-<%= button_to "Next Round", "/games/#{@game.id}/#{@status + 1}", method: :get %>
+<% if @status >= 4 %>
+    <%= button_to "How did I do?", "/games/#{@game.id}/complete", method: :get %>
+<% else %>
+    <%= button_to "Next Round", "/games/#{@game.id}/#{@status + 1}", method: :get %>
+<% end %>

@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   #game routes
   post '/games', to: 'games#create'
+  get '/games/:id/complete', to: 'games#complete'
   get '/games/:id/:status', to: 'games#guess'
   post '/games/:id/:status/:quote_id', to: 'games#assess'
+  
 
 end

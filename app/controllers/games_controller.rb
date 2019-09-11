@@ -1,11 +1,13 @@
 class GamesController < ApplicationController
+   
     def create
         game = Game.create
-        game.setup_game
+        game.setup_game(session[:player_id])
         redirect_to "/games/#{game.id}/0"
     end
 
     def guess
+        @player = current_user
         @game = Game.find(params[:id])
         @status = params[:status].to_i
         @answers = @game.rounds[@status].wrong_answers
@@ -25,6 +27,6 @@ class GamesController < ApplicationController
     end
 
     def complete
-
+        
     end
 end
