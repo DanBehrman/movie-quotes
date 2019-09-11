@@ -1,7 +1,9 @@
 <%= "Round #{@status}" %><br>
 
-<%= @game.quotes[@status - 1].text %>
-<% @answers.each do |answer| %>
-    <%= answer.author %>
-<% end %>
+<%= @game.quotes[@status].text %><br>
+<ol>
+    <% @answers.each do |answer| %>
+        <li><%= button_to answer.author, "/games/#{@game.id}/#{@status}/#{answer.id}" %></li>
+    <% end %>
+</ol>
 
