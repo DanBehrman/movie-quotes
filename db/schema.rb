@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_11_173307) do
+ActiveRecord::Schema.define(version: 2019_09_11_192810) do
 
   create_table "games", force: :cascade do |t|
-    t.integer "highscore"
+    t.integer "game_highscore", default: 0
   end
 
   create_table "player_games", force: :cascade do |t|
@@ -28,10 +28,10 @@ ActiveRecord::Schema.define(version: 2019_09_11_173307) do
   create_table "players", force: :cascade do |t|
     t.string "user_name"
     t.string "password_digest"
-    t.integer "high_score"
     t.string "motto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "player_highscore", default: 0
   end
 
   create_table "quotes", force: :cascade do |t|

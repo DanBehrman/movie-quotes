@@ -4,12 +4,29 @@
     <title>CharadesEmulator</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+   
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header><div id="header-container">
+    <div class="about">
+      <%= button_to "About", '/about'%>
+      </div>
+      <% if session[:player_id]  %>
+        <%= button_to "Play", '/games' %>
+        <%= button_to @player.user_name.capitalize, "/players/#{@player.id}" %>
+        <%= button_to "Logout", "/logout" %>
+      <% else %>
+        <div class="other">
+        <%= button_to "Sign In", "/login" %>
+        <%= button_to "Sign Up", "/signup", method: :get %>
+        </div>
+      <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>
