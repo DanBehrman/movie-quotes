@@ -1,9 +1,14 @@
-<h1><%= @player.user_name %></h1>
-<label>Highscore: </label><%= @player.player_highscore %><br>
-<label>Motto: </label><%= @player.motto %><br><br>
+<h2><%= @player.user_name %></h2>
 
+<div>Highscore: </div><%= @player.player_highscore %><br>
+<div>Motto: </div><%= @player.motto %><br><br>
+
+<div class="ui form"></div>
+<div class="ui card">
 <% if  @player.id == session[:player_id] %>
-    <%= button_to "Start a New Game!", '/games' %>
-    <%= button_to "Edit Player", edit_player_path, method: :get %><br>
-    <%= button_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}", method: :delete %>
+    <%= link_to "Start a New Game!", '/games' %> <br><br>
+    <%= link_to "Edit Player", edit_player_path %> <br><br>
+    <%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
 <% end %>
+</div>
+</div>
