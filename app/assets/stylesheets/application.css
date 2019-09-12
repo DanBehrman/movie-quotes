@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+.container > h2 {
+    text-align: center;
+    margin: auto;
+}
+
+.ui.card {
+    width: 50%;
+    margin: auto;
+}
+
+.ui.form {
+    width: 50%;
+    margin: auto;
+}
+
+.field {
+    padding: 5px;
+}
+
+.submit-holder {
+    margin-left: 70%;
+}
