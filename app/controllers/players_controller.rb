@@ -6,7 +6,7 @@ class PlayersController < ApplicationController
     end
 
     def show
-        byebug
+        # byebug
         @player = Player.find(params[:id])
     end
     
