@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CharadesEmulator</title>
+    <title>Movie Quote Fun Time</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-   
 
+    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path("favicon.ico") %>
   </head>
 
   <body>
-  
+  <div class="ui inverted menu" style="width: 50%; margin: auto" >
+    <% if session[:player_id]  %>
+        <div class="header item">
+          <%= link_to "New Game", '/games', method: :post %>  
+        </div>
+        <div class="right menu">
+          <div class="header item">
+            <%= link_to @current_user.user_name, "/players/#{@current_user.id}" %>
+          </div>
+          <div class="header item">
+            <%= link_to "Logout", "/logout", method: :post %>
+          </div>
+        </div>
+      <% else %>
+        <div class="right menu">
+          <div class="header item">
+            <%= link_to "Sign In", "/login" %>
+          </div>
+          <div class ="header item">
+            <%= link_to "Sign Up", "/signup", method: :get %>
+          </div>
+      <% end %>
+      </div>
+  </div>
     <%= yield %>
   </body>
 </html>

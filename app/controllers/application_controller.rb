@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
+    helper_method :current_user
 
     def current_user
-        @player = Player.find(session[:player_id]) if session[:player_id]
+        @current_user ||= Player.find(session[:player_id]) if session[:player_id]
     end
 
     def logged_in?

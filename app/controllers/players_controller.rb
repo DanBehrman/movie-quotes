@@ -1,4 +1,6 @@
 class PlayersController < ApplicationController
+    before_action :current_user
+
     def index
         @players = Player.all
     end

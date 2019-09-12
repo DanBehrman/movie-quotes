@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+    before_action :current_user
    
     def create
         game = Game.create
