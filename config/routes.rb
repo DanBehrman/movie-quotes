@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   #application routes
   get '/', to: 'static#welcome'
+  get '/about', to: 'static#about'
 
   #players routes
   get '/players', to: 'players#index'

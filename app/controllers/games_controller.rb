@@ -43,9 +43,8 @@ class GamesController < ApplicationController
       
         end
         if @current_score > @player.player_highscore
-            @player.update(player_highscore: @current_score)
             @player.player_highscore = @current_score
-      
+            @player.save(validate: false)
         end
   
     end

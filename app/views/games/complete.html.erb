@@ -1,4 +1,4 @@
-Your Score: <%= @current_score %><br><br>
-This Game's Highest Score: <%= @game.game_highscore %><br><br>
+Your Results: <%= @current_score %><br><br>
 Your Highest Score: <%= @player.player_highscore %><br><br>
  <%= button_to "Start a New Game!", '/games' %>
+ <%= button_to @player.username, "/players/#{@player.id}" %>
