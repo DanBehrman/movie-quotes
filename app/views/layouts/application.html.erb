@@ -12,7 +12,7 @@
   </head>
 
   <body>
-  <div class="ui inverted menu" style="width: 50%; margin: auto" >
+  <div class="ui inverted menu" style="width: 85%; margin: auto" >
     <% if @current_user  %>
         <div class="header item">
           <%= link_to "New Game", '/games', method: :post %>  
@@ -25,7 +25,7 @@
             <%= link_to "Logout", "/logout", method: :post %>
           </div>
         </div>
-      <% else %>
+    <% else %>
         <div class="right menu">
           <div class="header item">
             <%= link_to "Sign In", "/login" %>
@@ -33,9 +33,13 @@
           <div class ="header item">
             <%= link_to "Sign Up", "/signup", method: :get %>
           </div>
-      <% end %>
-      </div>
+        </div>
+    <% end %>
   </div>
+  <br>
+  <div class="container">
+  <br><br><br>
     <%= yield %>
+  </div>
   </body>
 </html>
