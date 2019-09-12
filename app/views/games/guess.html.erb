@@ -1,9 +1,30 @@
-<%= "Round #{@status+1}" %><br><br>
-
-<%= @game.quotes[@status].text %><br>
+<br><br><br>
+  <div style="text-align: center"><h2 class="ui header"><%= "Round #{@status + 1}" %></h2></div><br>
+<div class="ui card" style="margin: auto; width: 50%">
+    <div class="ui two top attached basic buttons">
+        <div class="ui button">
+            <%= link_to @answers[0].author, "/games/#{@game.id}/#{@status}/#{@answers[0].id}", method: :post %>
+        </div>
+        <div class="ui button">
+            <%= link_to @answers[1].author, "/games/#{@game.id}/#{@status}/#{@answers[1].id}", method: :post %>
+        </div>
+    </div>
+    <div class="content" style="padding: 20px;">
+        <div style="text-align: center">"<%= @game.quotes[@status].text %>"</div>
+    </div>
+    <div class="ui two bottom attached basic buttons">
+        <div class="ui button">
+            <%= link_to @answers[2].author, "/games/#{@game.id}/#{@status}/#{@answers[2].id}", method: :post %>
+        </div>
+        <div class="ui button">
+            <%= link_to @answers[3].author, "/games/#{@game.id}/#{@status}/#{@answers[3].id}", method: :post %>
+        </div>
+    </div>
+</div>
+<!-- <%= @game.quotes[@status].text %><br>
 <ol>
     <% @answers.each do |answer| %>
         <li><%= button_to answer.author, "/games/#{@game.id}/#{@status}/#{answer.id}" %></li>
     <% end %>
-</ol>
+</ol> -->
 
