@@ -8,8 +8,11 @@ class SessionsController < ApplicationController
         if player && player.authenticate(params[:password])
             session[:player_id] = player.id
             redirect_to player_path(player)
+        elsif player.nil?
+            flash.now[:messages] = ["We could not find that username, please try again."]
+            render :new
         else
-            flash.now[:messages] = player.errors.full_messages
+            flash.now[:messages] = ["Username found, but the password you have tried is incorrect."]
             render :new
         end
     end

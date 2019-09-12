@@ -1,4 +1,24 @@
 <h1>Login!</h1>
+
+<div class="ui form error">
+    <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+            <div class="ui error message"><%= message %></div>
+        <% end %>
+        <br>
+    <% end %>
+</div>
+
+
+<!--
+<ul>
+    <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    <% end %>
+</ul>
+-->
 <%= form_tag '/login' do %>
     <label>Username: </label><%= text_field_tag :user_name %><br><br>
     <label>Password: </label><%= password_field_tag :password %><br><br>

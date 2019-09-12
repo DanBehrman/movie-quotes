@@ -38,3 +38,4 @@
 # Quote.create!(text: "According to the map, we've only gone 4 inches.", author: "Dumb and Dumber" )
 # Quote.create!(text: "Just keep swimming.", author: "Finding Nemo" )
 # Quote.create!(text: "To infinity, and beyond!", author: "Toy Story" )
+# Quote.create!(text: "They took your wife away in a balloon? Well you don't need the police, pal, you need a psychiatrist!", author: "Killer Klowns from Outer Space")
