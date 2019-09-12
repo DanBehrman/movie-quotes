@@ -13,23 +13,3 @@
  *= require_tree .
  *= require_self
  */
-header-container {
-    width: 100%;
-    display: flex;
-}
-
-header .button_to {
-    display: inline;
-}
-
-.about {
-    text-align: left;
-    width: 25%;
-    display: inline;
-}
-
-.other {
-    width: 60%;
-    display: inline;
-    text-align: right;
-}
