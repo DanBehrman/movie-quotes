@@ -6,6 +6,7 @@ class PlayersController < ApplicationController
     end
 
     def show
+        byebug
         @player = Player.find(params[:id])
     end
     
@@ -17,7 +18,6 @@ class PlayersController < ApplicationController
         @player = Player.create(player_params)
         if @player.valid?
             @player.save
-            #redirect_to player_path(@player)
             session[:player_id] = @player.id
             redirect_to player_path(@player)
         else
