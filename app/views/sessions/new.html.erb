@@ -1,14 +1,21 @@
 <h2>Login!</h2><br>
-
-    <%= form_tag('/login', class: "ui form") do %>
-        <br>
-        <div class="field">
-            <%= text_field_tag :user_name, nil, placeholder: "Username" %>
-        </div>
-        <div class="field">
-            <%= password_field_tag :password, nil, placeholder: "Password" %>
-        </div>
-        <div class="submit-holder">
-            <%= submit_tag 'OMG LOGIN', class: "black ui button" %>
-        </div>
+<div class="ui form error">
+    <% if flash[:messages] %>
+        <% flash[:messages].each do |message| %>
+            <div class="ui error message"><%= message %></div>
+        <% end %>
     <% end %>
+</div>
+
+<%= form_tag('/login', class: "ui form") do %>
+    <br>
+    <div class="field">
+        <%= text_field_tag :user_name, nil, placeholder: "Username" %>
+    </div>
+    <div class="field">
+        <%= password_field_tag :password, nil, placeholder: "Password" %>
+    </div>
+    <div class="submit-holder">
+        <%= submit_tag 'OMG LOGIN', class: "black ui button" %>
+    </div>
+<% end %>
