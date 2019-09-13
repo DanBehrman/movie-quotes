@@ -25,5 +25,7 @@ Rails.application.routes.draw do
   get '/games/:id/:status', to: 'games#guess'
   post '/games/:id/:status/:quote_id', to: 'games#assess'
   
-
+  #quotes routes
+  post '/quotes', to: 'quotes#create'
+  get '/quotes/new', to: 'quotes#new'
 end

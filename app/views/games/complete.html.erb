@@ -1,8 +1,8 @@
 <h2>Great Job Maybe! I don't really know how you feel about it!</h2><br><br>
 
 <div style="text-align: center;">
-    <h3>Your Results: <%= @current_score %></h3>
-    <h3>Your Highest Score Ever (like of all time): <%= @player.player_highscore %></h3>
+    <h3>Your Results: <%= @current_score %> / 50</h3> 
+    <h3>Your Highest Score Ever (like of all time): <%= @player.player_highscore %> </h3>
     <div class="submit-holder">
         <%= button_to "Start a New Game!", '/games', class: "black ui button" %>
     </div>

@@ -17,6 +17,12 @@
         <div class="header item">
           <%= link_to "New Game", '/games', method: :post %>  
         </div>
+         <div class="header item">
+          <%= link_to "All Players", '/players', method: :get %>  
+        </div>
+        <div class="header item">
+          <%= link_to "Add Quote", '/quotes/new', method: :get %>  
+        </div>
         <div class="right menu">
           <div class="header item">
             <%= link_to @current_user.user_name, "/players/#{@current_user.id}" %>

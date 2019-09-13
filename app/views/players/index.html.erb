@@ -8,7 +8,7 @@
                 <% else %>
                     <div class="image" ><img src="/../../assets/Screen Shot 2019-09-13 at 10.05.53 AM.png"></div>
                 <% end %>
-                <div class="content">
+                <div class="content" style="height: ">
                     <div class="header"><%= link_to player.user_name, "/players/#{player.id}" %></div>
                     <div class= "meta">Last Played <%= player.updated_at.month %>/<%= player.updated_at.day %></div>
                 </div>
