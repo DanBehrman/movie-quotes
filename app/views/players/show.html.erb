@@ -1,13 +1,60 @@
-<h2><%= @player.user_name %></h2>
-<div>Highscore: </div><%= @player.player_highscore %><br>
-<div>Motto: </div><%= @player.motto %><br><br>
-
-<div class="ui form"></div>
-<div class="ui card">
-<% if  @player.id == session[:player_id] %>
-    <%= link_to "Start a New Game!", '/games' %> <br><br>
-    <%= link_to "Edit Player", edit_player_path %> <br><br>
-    <%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
-<% end %>
+<!--
+<div class="ui grid" style="text-align: center flex: auto"><h2><%= @player.user_name %></h2>
+    <div class="left aligned eight wide column">
+            <div>Highscore: <br> <br><%= @player.player_highscore %></div><br>
+            <div>Motto: <%= @player.motto %></div> <br>
+    </div>
+    <div class="right aligned eight wide column">
+        <div class="center aligned two column row">
+        <% if  @player.id == session[:player_id] %>
+        <br>
+            <%= link_to "Start a New Game!", '/games' %> <br><br> 
+            <%= link_to "Edit Player", edit_player_path %> <br><br>
+        </div class="sixteen wide center aligned column">
+            <%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
+        <% end %>
+    </div>
 </div>
+
+
+<h2 class="ui dividing header" style="width: 75%; margin: auto"><%= @player.user_name %></h2> <br><br>
+<div class="center aligned two column row" style="text-align: center; flex-grow: 2; margin: auto" >
+    Highscore: <%= @player.player_highscore %>
+    <div class="vertical-line"></div>
+    <%= link_to "Start a New Game!", '/games' %> 
+</div>
+<div class="center aligned two column row" style="text-align: center">
+    <br> Motto: <%= @player.motto %>
+    <% if  @player.id == session[:player_id] %>
+        <%= link_to "Edit Player", edit_player_path %> 
+</div>
+    <div class="sixteen wide center aligned column"style="text-align: center">
+    <br><br><%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
+    </div>
+<% end %>
+-->
+
+<div class="ui segments" >
+    <div class="ui segment">
+        <h2><%= @player.user_name %></h2>
+    </div>
+    <div class="ui horizontal segments">
+        <div class="ui segment">
+            Highscore: <%= @player.player_highscore %> 
+        </div>
+        <div class="ui segment">
+            <%= link_to "Start a New Game!", '/games', method: :post %> 
+        </div>
+    </div>
+    <div class="ui horizontal segments">
+        <div class="ui segment">
+            Motto: <%= @player.motto %>
+        </div>
+        <div class="ui segment">
+            <%= link_to "Edit Player", edit_player_path %> 
+        </div>
+    </div>
+    <div class="ui segment">
+        <%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
+    </div>
 </div>
