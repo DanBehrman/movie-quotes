@@ -5,7 +5,7 @@
 <div class="ui form"></div>
 <div class="ui card">
 <% if  @player.id == session[:player_id] %>
-    <%= link_to "Start a New Game!", '/games' %> <br><br>
+    <%= link_to "Start a New Game!", '/games', method: :post %> <br><br>
     <%= link_to "Edit Player", edit_player_path %> <br><br>
     <%= link_to "Wipe yourself off the face of this program. However, just know, that - if you do this, there's no coming back from it.", "/players/#{@player.id}" %> <br><br>
 <% end %>

@@ -32,6 +32,10 @@
     padding: 5px;
 }
 
-.submit-holder {
-    margin-left: 70%;
+.submit-holder > * {
+  float: right;
+}
+
+.button_to > * {
+    float: right;
 }
