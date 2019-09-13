@@ -1,17 +1,19 @@
 <h2>Look at all these PLAYERS!!!</h2> <br>
-<div class="ui cards">
-    <% @players.each do |player| %>
-        <div class="ui card"style="max-width: 18%; ">
-            <% if player.player_highscore > 49 %>
-                <div class="image" ><img src="/../../assets/Screen Shot 2019-09-13 at 10.11.37 AM.png"></div>
-            <% else %>
-                <div class="image" ><img src="/../../assets/Screen Shot 2019-09-13 at 10.05.53 AM.png"></div>
-            <% end %>
-            <div class="content">
-                <div class="header"><%= link_to player.user_name, "/players/#{player.id}" %></div>
-                <div class= "meta">Last Played <%= player.updated_at.month %>/<%= player.updated_at.day %></div>
+<div class="clowncontainers">
+    <div class="ui cards">
+        <% @players.each do |player| %>
+            <div class="ui card"style="max-width: 18%; ">
+                <% if player.player_highscore > 49 %>
+                    <div class="image" ><img src="/../../assets/Screen Shot 2019-09-13 at 10.11.37 AM.png"></div>
+                <% else %>
+                    <div class="image" ><img src="/../../assets/Screen Shot 2019-09-13 at 10.05.53 AM.png"></div>
+                <% end %>
+                <div class="content">
+                    <div class="header"><%= link_to player.user_name, "/players/#{player.id}" %></div>
+                    <div class= "meta">Last Played <%= player.updated_at.month %>/<%= player.updated_at.day %></div>
+                </div>
+                
             </div>
-            
-        </div>
-    <% end %>
+        <% end %>
+    </div>
 </div>

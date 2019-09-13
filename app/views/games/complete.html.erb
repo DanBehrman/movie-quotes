@@ -1,4 +1,9 @@
-Your Results: <%= @current_score %><br><br>
-Your Highest Score: <%= @player.player_highscore %><br><br>
- <%= button_to "Start a New Game!", '/games' %>
- <%= button_to @player.user_name, "/players/#{@player.id}" %>
+<h2>Great Job Maybe! I don't really know how you feel about it!</h2><br><br>
+
+<div style="text-align: center;">
+    <h3>Your Results: <%= @current_score %></h3>
+    <h3>Your Highest Score Ever (like of all time): <%= @player.player_highscore %></h3>
+    <div class="submit-holder">
+        <%= button_to "Start a New Game!", '/games', class: "black ui button" %>
+    </div>
+</div>

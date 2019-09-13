@@ -1,11 +1,15 @@
-<%= @correct_answer.text %> was from <%= @correct_answer.author %><br><br>
+<h2><%= @answer %></h2><br><br>
 
-Your current score is: <%= @score %>
+<div style="text-align: center;">
+    <h3>"<%= @correct_answer.text %>" was from <%= @correct_answer.author %></h3><br>
+    <p>Your current score is:</p> <div style="font-size: 40px;"><p><%= @score %></p></div>
+</div>
 
-<h1><%= @answer %></h1><br><br>
 
-<% if @status >= 4 %>
-    <%= button_to "How did I do?", "/games/#{@game.id}/complete", method: :get %>
-<% else %>
-    <%= button_to "Next Round", "/games/#{@game.id}/#{@status + 1}", method: :get %>
-<% end %>
+<div class="submit-holder">
+    <% if @status >= 4 %>
+        <%= button_to "How did I do?", "/games/#{@game.id}/complete", method: :get, class: "black ui button" %>
+    <% else %>
+       <%= button_to "Next Round ➜", "/games/#{@game.id}/#{@status + 1}", method: :get, class: "black ui button" %>
+    <% end %>
+</div>
